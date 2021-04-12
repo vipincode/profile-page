@@ -1,0 +1,19 @@
+// ===============================================================
+//          FORMS LAYOUT
+// ===============================================================
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px 12px;
+    font-size: em(17px);
+    font-weight: $font-weight--sm;
+    line-height: em(30px, 17px);
+    border: 1px solid color(grey);
+    margin-bottom: 15px;
+    border-radius: $br-radius;
+}

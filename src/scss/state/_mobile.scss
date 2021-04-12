@@ -1,0 +1,54 @@
+// =====================================================================
+//          MOBILE NAVIGATION
+// =====================================================================
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 999;
+    @include mq('lg') {
+        display: none;
+    }
+}
+.mobile {
+    &-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $color__white;
+        z-index: 99;
+        width: 0;
+        opacity: 0;
+        overflow: hidden;
+        -webkit-transition: width $transition ease-in, opacity $transition ease-in;
+        transition: width $transition ease-in, opacity $transition ease-in;
+    }
+    &-menu {
+        height: 100%;
+        overflow-y: scroll;
+        li {
+            font-size: em(20px);
+            padding: 14px 30px;
+            border-top: 1px solid color(grey, light);
+        }
+    }
+    &-logo {
+        margin-bottom: 30px;
+        padding: 14px 30px;
+    }
+}
+.js__toggle {
+    width: 280px;
+    opacity: 1;
+}
+.js__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($color__black, 0.65);
+    z-index: 99;
+}

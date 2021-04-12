@@ -1,0 +1,490 @@
+// =====================================================================
+//          HOME PAGE [BNNER]
+// =====================================================================
+#banner {
+    position: relative;
+}
+.banner {
+    @include bg-image($img: 'banner.jpg', $bg-position: center, $bg-size: cover);
+    height: 550px;
+    position: relative;
+    background-color: color(primary);
+    @include mq('md') {
+        height: 650px;
+    }
+    @include mq('lg') {
+        height: 800px;
+    }
+    @include mq('xl') {
+        height: 100vh;
+    }
+
+    @include p-el($el: 'after', $el-width: 100%, $el-height: 100%) {
+        top: 0;
+        left: 0;
+        background: linear-gradient(-120deg, rgba($color__black, 0.45), rgba($color__black, 0.75));
+    }
+
+    &-items {
+        @extend %position-center;
+        @extend %center;
+        @include el-width($el-width: 95%);
+
+        @include mq('lg') {
+            @include el-width($el-width: 60%);
+        }
+
+        color: $color__white;
+        z-index: 9;
+
+        h1 {
+            @extend %xl-heading;
+        }
+
+        p {
+            @extend %accent;
+        }
+
+        a.btn {
+            @extend %margin-md;
+        }
+
+        strong {
+            color: color(primary);
+        }
+    }
+
+    &-logo {
+        position: absolute;
+        left: 35px;
+        top: 30px;
+        z-index: 9;
+    }
+
+    &-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background: $light__black;
+        width: 60px;
+        z-index: 99;
+        transition: width $transition ease-in-out;
+        display: none;
+        @include mq('lg') {
+            display: block;
+        }
+
+        &:hover {
+            width: 200px;
+        }
+
+        &:hover a {
+            opacity: 1;
+            animation: rightToLeft $transition ease-in;
+        }
+
+        ul {
+            a {
+                font-size: em(14px);
+                font-weight: $font-weight--md;
+                color: color(primary, light);
+                text-transform: uppercase;
+                line-height: em(35px, 14px);
+                padding: 10px 20px;
+                transition: background-color $transition ease-in-out, color $transition ease-in;
+                opacity: 0;
+
+                &:hover {
+                    background-color: color(secondary);
+                    color: $color__white;
+                }
+            }
+        }
+
+        &--home {
+            position: relative;
+            @include p-el($el: 'after', $el-width: 32px, $el-height: 32px) {
+                @include bg-image('home.svg');
+                top: 7px;
+                right: 14px;
+            }
+        }
+        &--about {
+            position: relative;
+            @include p-el($el: 'after', $el-width: 32px, $el-height: 32px) {
+                @include bg-image('about.svg');
+                top: 7px;
+                right: 14px;
+            }
+        }
+        &--service {
+            position: relative;
+            @include p-el($el: 'after', $el-width: 32px, $el-height: 32px) {
+                @include bg-image('services.svg');
+                top: 7px;
+                right: 14px;
+            }
+        }
+        &--contact {
+            position: relative;
+            @include p-el($el: 'after', $el-width: 32px, $el-height: 32px) {
+                @include bg-image('contact.svg');
+                top: 7px;
+                right: 14px;
+            }
+        }
+        &--blog {
+            position: relative;
+            @include p-el($el: 'after', $el-width: 32px, $el-height: 32px) {
+                @include bg-image('blog.svg');
+                top: 7px;
+                right: 11px;
+            }
+        }
+    }
+
+    &-socials {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        @include mq('lg') {
+            left: 50px;
+            top: 18%;
+            bottom: initial;
+            transform: initial;
+        }
+        @include mq('xl') {
+            top: 30%;
+        }
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 17px;
+                @include mq('lg') {
+                    display: block;
+                    margin: initial;
+                }
+            }
+            a {
+                font-size: em(14px);
+                color: color(primary, light);
+                padding: 7px 0px;
+                [class*="fab"] {
+                    transition: color $transition ease-in-out;
+                    &:hover {
+                        color: color(secondary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// =====================================================================
+//          HOME PAGE [SERVICES]
+// =====================================================================
+
+#services {
+    @extend %margin-lg
+}
+.services {
+    h1 {
+        @extend %prim-heading;
+        text-align: center;
+    }
+    &-item {
+        background-color: $color__white;
+        padding: 15px;
+        border-radius: $br-radius;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: transform $transition ease-in;
+        @include p-el($el: 'after', $el-width: 125px, $el-height: 125px) {
+            background-color: $light__black;
+            bottom: -43px;
+            right: -65px;
+            border-radius: $br-roundy;
+            transition: opacity $transition ease-in;
+        }
+        &:hover {
+            transform: translateY(-10px);
+        }
+        &__title {
+            @extend %top;
+            h3 {
+                @extend %ter-heading;
+            }
+            p {
+               font-size: em(15px);
+               width: 85%;
+            }
+        }
+        &__img {
+            position: absolute;
+            right: 4px;
+            bottom: 12px;
+            z-index: 2;
+        }
+    }
+}
+
+// =====================================================================
+//          HOME PAGE [ABOUT US]
+// =====================================================================
+
+#about {
+    @extend %margin-lg;
+    @extend %padded-md;
+}
+
+.about {
+    h1 {
+        @extend %prim-heading;
+    }
+
+    p {
+        margin-bottom: 6px;
+    }
+
+    &-item {
+        @include mq('xs') {
+            margin-top: 30px;
+        }
+        .btn {
+            margin-top: 50px;
+        }
+        position: relative;
+        .experiance {
+            @include roundy($width: 90px, $height: 90px);
+            text-align: center;
+            background-color: color(secondary);
+            font-size: em(13px);
+            font-weight: $font-weight--lg;
+            padding-top: 23px;
+            color: $color__white;
+            position: absolute;
+            left: 12px;
+            bottom: 26px;
+            @include mq('xl') {
+                left: -42px;
+            }
+        }
+    }
+}
+
+// =====================================================================
+//          HOME PAGE [ABOUT US]
+// =====================================================================
+
+#contact {
+    @extend %margin-lg;
+    text-align: center;
+    background-color: color(secondary);
+    position: relative;
+    @include bg-image($img:'contact.jpg', $bg-size: cover, $bg-position: center);
+    @include p-el($el: 'after', $el-width: 100%, $el-height: 100%) {
+        background-color: rgba($secondary__color, 0.89);
+        top: 0;
+        left: 0;
+    }
+}
+
+.contact {
+    article {
+        color: color(primary, x-light);
+        padding: 20px;
+        @extend %top;
+        h2 {
+            @extend %prim-heading;
+        }
+        @include mq('lg') {
+            @include el-width($el-width: 60%);
+        }
+
+        .btn {
+            @extend %margin-md;
+        }
+    }
+}
+
+// =====================================================================
+//          HOME PAGE [NEWS]
+// =====================================================================
+
+.news {
+    .swiper-news {
+        height: 300px;
+    }
+
+    &-items {
+        &__headings {
+            h1 {
+                @extend %prim-heading;
+            }
+            h2 {
+                @extend %sec-heading;
+                @extend %margin-sm;
+            }
+        }
+        &__slider {
+            .swiper-pagination-bullet {
+                background-color: color(secondary);
+            }
+
+            .swiper-slide {
+                height: auto !important;
+            }
+        }
+        &__date {
+            background-color: $secondary__color;
+            text-align: center;
+            span {
+                display: block;
+                color: $color__white;
+                padding: 1px 4px;
+                &:first-child {
+                    font-size: em(28px);
+                    line-height: em(34px, 28px);
+                    font-weight: $font-weight--lg;
+                }
+                &:last-child {
+                    font-size: em(18px);
+                    font-weight: $font-weight--xs;
+                    background-color: $light__black;
+                }
+            }
+        }
+    }
+}
+
+.blog {
+    @extend %margin-sm;
+    &-card {
+        background-color: $color__white;
+        border-radius: $br-radius;
+        overflow: hidden;
+        transition: transform $transition ease-in-out;
+        &:hover {
+            transform: translateY(-12px);
+        }
+        article {
+          padding: 0px 4px 4px 12px;
+            h3 {
+                @extend %small-heading;
+            }
+
+            p {
+                font-size: em(14px);
+            }
+        }
+    }
+    &__btn {
+        text-align: center;
+    }
+}
+
+// =====================================================================
+//          HOME PAGE [ASK EXPERT]
+// =====================================================================
+
+#ask {
+    @extend %padded-md;
+    margin-top: 60px;
+    background-color: color(secondary, x-light);
+    color: color(secondary);
+}
+
+// =====================================================================
+//          HOME PAGE [FOOTER]
+// =====================================================================
+
+#footer {
+    @extend %padded-md;
+    background-color: color(black);
+}
+
+.footer {
+    color: color(grey);
+    a {
+        color: color(grey);
+        font-size: em(15px);
+    }
+    h3 {
+        position: relative;
+        @extend %ter-heading;
+        @include p-el($el: 'after', $el-width: 25px, $el-height: 2px) {
+            background-color: color(secondary);
+            margin-top: em(5px, 20px);
+        }
+    }
+    ul {
+        @extend %margin-sm;
+    }
+    .newsletter {
+        p {
+            @extend %accent;
+        }
+        form {
+            @extend %margin-md;
+        }
+        button {
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            padding: 6px 12px;
+            background-color: color(secondary);
+            font-size: em(14px);
+            line-height: em(25px, 14px);
+            color: $color__white;
+        }
+        input[type="email"] {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 6px 12px;
+            border-bottom: 2px solid color(secondary);
+            background-color: transparent;
+            font-size: em(14px);
+            line-height: em(25px, 14px);
+            color: $color__white;
+            border-radius: initial;
+        }
+    }
+
+    .socials {
+       ul {
+           @extend %margin-lg;
+           @include flexy();
+           li {
+            margin-right: 30px;
+           }
+       }
+    }
+    
+    .copyright {
+        margin-top: 30px;
+        a {
+            display: inline-block;
+        }
+        p {
+            @extend %small;
+            letter-spacing: $letter-space;
+            color: color(grey);
+        }
+    }
+}
+

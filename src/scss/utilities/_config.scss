@@ -1,0 +1,81 @@
+// GOOGLE FOONTS
+$font-stack--google     : 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700';
+$font-family--primary   : 'Raleway', sans-serif;
+
+$font-weight--xs        : 300;
+$font-weight--sm        : 400;
+$font-weight--md        : 500;
+$font-weight--lg        : 600;
+$font-weight--xl        : 700;
+
+// QPICK COLORS
+
+$primary__color          : #fe6705;
+$secondary__color        : #f94a29;
+$color__grey             : #D4D4D4;
+$color__white            : #ffffff;
+$color__black            : #0b0b0b;
+$light__black            : #34495E;
+
+// COLOR MAPS
+
+$ui-colors         : (
+	default          : #34495E,
+	info             : #1DABB8,
+	warning          : #FF6766,
+	success          : #2CC990,
+	error            : #E01931 
+);
+
+$colors: (
+ grey: (
+	 x-light : lighten($color__grey, 20%),
+	 light   : lighten($color__grey, 12%),
+	 base    : $color__grey,
+	 dark    : darken($color__grey, 10%),
+ ),
+ black:(
+	 x-light : lighten($color__black, 20%),
+	 light   : lighten($color__black, 15%),
+	 base    : $color__black,
+	 dark    : darken($color__black, 10%),
+ ),
+ primary: (
+	 x-light : lighten($primary__color, 35%),
+	 light   : lighten($primary__color, 8%),
+	 base    : $primary__color,
+	 dark    : darken($primary__color, 12%),
+ ),
+ secondary: (
+	 x-light : lighten($secondary__color, 35%),
+	 light   : lighten($secondary__color, 15%),
+	 base    : $secondary__color,
+ ),
+);
+
+// UNITS
+
+$base-font               : 16px;
+$base--line              : 28px;
+$letter-space            : 1px;
+$max-width               : 1600px;
+$gutter                  : 30px;
+$transition              : 0.4s;
+$br-radius               : 4px;
+$br-roundy               : 50%;
+$img-path                : '../../img';
+$spaceamounts            : (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sides                   : (top, bottom, left, right);
+
+
+// BREAKPOINTS
+
+$breakpoints   : (
+	'xs'         : 575px,
+	'sm'         : 576px,
+	'md'         : 768px,
+	'lg'         : 1024px,
+	'xl'         : 1200px,
+	'xxl'        : 1400px,
+	'xll'        : 1920px,
+);

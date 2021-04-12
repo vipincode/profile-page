@@ -1,0 +1,100 @@
+// ==================================================================
+//               CONTACT US [BANNER]
+// ==================================================================
+
+#sm-banner {
+    height: 300px;
+    background-color: color(secondary, x-light);
+    position: relative;
+    @include bg-image('contact-bg.jpg', $bg-size: cover, $bg-position: center);
+    @include mq('xl') {
+        background-position: 0 -155px;
+    }
+    @include p-el($el: 'after', $el-width: 100%, $el-height: 100%) {
+        background: linear-gradient(120deg, rgba($color__black, 0.45), rgba($color__black, 0.75));
+        top: 0;
+        left: 0;
+    }
+
+    .banner-socials {
+        @include mq('lg') {
+            top: 35%;
+        }
+    }
+}
+
+.sm-banner {
+    &--logo {
+        position: absolute;
+        left: 35px;
+        top: 30px;
+        z-index: 9; 
+    }
+
+    &--items {
+        @extend %center;
+        @extend %position-center;
+        width: 100%;
+        color: $color__white;
+        z-index: 2;
+        @include mq('lg') {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            @extend %xl-heading;  
+        }
+    }
+}
+
+// ==================================================================
+//               CONTACT US [FORM]
+// ==================================================================
+
+#contactus {
+    @extend %padded-lg;
+}
+
+.contactus {
+   form {
+       width: 100%;
+       margin: 0 auto;
+   }
+
+   &--form {
+       background-color: $color__white;
+       padding: 25px;
+       border-radius: $br-radius;
+       margin-top: 30px;
+   }
+
+   &--item {
+       span {
+           display: block;
+       }
+       h3 {
+           @extend %ter-heading;
+           margin-top: 12px;
+           &::first-letter {
+               color: color(secondary);
+               font-size: em(24px);
+           }
+       }
+       .socials {
+           margin-top: 12px;
+           ul {
+               li {
+                   display: inline-block;
+                   margin-right: 20px;
+               }
+               a {
+                   transition: color $transition ease-in-out;
+                   &:hover {
+                       color: color(secondary);
+                   }
+               }
+           }
+       }
+   }
+}

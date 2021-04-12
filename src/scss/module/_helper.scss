@@ -1,0 +1,64 @@
+// ===============================================================
+//           HELPERS FOR TYPOGRAPHY
+// ===============================================================
+
+%xl-heading {
+    font-size: em(28px);
+    font-weight: $font-weight--xl;
+    line-height: em(48px, 28px);
+    text-shadow: 0 0 8px rgba(color(black), 0.06),
+                 0 0px 9px rgba(color(black), 0.36);
+    @include mq('md') {
+        font-size: em(32px);
+        line-height: em(51px, 32px);
+    }
+    @include mq('xl') {
+        font-size: em(58px);
+        line-height: em(90px, 58px);
+    }
+    @include mq('xxl') {
+        font-size: em(62px);
+        line-height: em(105px, 62px)
+    }
+}
+
+%prim-heading {
+    font-size: em(28px);
+    font-weight: $font-weight--xl;
+    span {
+        color: color(secondary);
+    }
+    @include mq('lg') {
+        font-size: em(38px);
+    }
+}
+
+%sec-heading {
+    font-size: em(22px);
+    font-weight: $font-weight--lg;
+    @include mq('lg') {
+        font-size: em(24px);
+    }
+}
+
+%ter-heading {
+    font-size: em(18px);
+    font-weight: $font-weight--lg;
+}
+
+%small-heading {
+    font-size: em(15px);
+    font-weight: $font-weight--lg;
+}
+
+%accent {
+    @include mq('lg') {
+        font-size: em(18px);
+        font-weight: $font-weight--sm;
+    }
+}
+
+%small {
+    font-size: em(14px);
+    font-weight: $font-weight--xs;
+}

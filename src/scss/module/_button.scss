@@ -1,0 +1,76 @@
+// ==========================================================
+//                   BUTTON RULES
+// ==========================================================
+%btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: em(18px);
+    padding: 6px 20px;
+    text-align: center;  
+    font-weight: $font-weight--md;
+    color: $color__white;
+    line-height: em(32px, 18px);
+    border-radius: $br-radius;
+    letter-spacing: $letter-space;
+}
+
+.btn {
+    @extend %btn;
+    &--primary {
+        background-color: $light__black;
+        position: relative;
+        overflow: hidden;
+        @include p-el($el: 'after', $el-width: 100px, $el-height: 100px) {
+            top: 8px;
+            left: -25px;
+            border-radius: $br-roundy;
+            background-color: color(secondary);
+            transition: transform $transition ease-out;
+        }
+        &:hover::after {
+            transform: scale(1.4);
+        }
+        span {
+            @extend %top;
+        }
+    }
+    &--secondary {
+        background-color: $secondary__color;
+        position: relative;
+        overflow: hidden;
+        @include p-el($el: 'after', $el-width: 100px, $el-height: 100px) {
+            top: 8px;
+            left: -25px;
+            border-radius: $br-roundy;
+            background-color: $light__black;
+            transition: transform $transition ease-out;
+        }
+        &:hover::after {
+            transform: scale(1.4);
+        }
+        span {
+            @extend %top;
+        }
+    }
+
+    &--black {
+        background-color: $light__black;
+        position: relative;
+        overflow: hidden;
+        @include p-el($el: 'after', $el-width: 100px, $el-height: 100px) {
+            top: 8px;
+            left: -25px;
+            border-radius: $br-roundy;
+            background-color: color(primary);
+            transition: transform $transition ease-out;
+        }
+        &:hover::after {
+            transform: scale(1.4);
+        }
+        span {
+            @extend %top;
+        }
+    }
+}
